@@ -1,0 +1,690 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="dash.css">
+  <style>
+    .footerr {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerr p {
+  margin-left: 600px;
+}
+</style>
+    <title>dashboard</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #ffe6c6;">
+        <div class="container-fluid" style="margin-left: 5%; margin-right: 5%;">
+        <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="Logo" width="90" height="90" class="d-inline-block" style="height: 100px;">
+        <span style="font-size: 40px; color: #FFCA2C; font-weight: 900;">dishCovery</span>
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll"  style="--bs-scroll-height: 100px;" >
+            <li class="nav-item active">
+            <a class="nav-link mx-3" href="index.html" style="color: black; font-weight: 600; font-size: 22px;" >Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link mx-3" href="dashboard.html" style="color: black; font-weight: 600; font-size: 22px;" >Recipe</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link mx-3" href="profile.html" style="color: black; font-weight: 600; font-size: 22px;" >My Profile</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link mx-3" href="login.html" style="color: black; font-weight: 600; font-size: 22px;" >Logout</a>
+                        </li>
+     
+            </li>
+        </ul>
+        </div>
+    </div>
+        </nav>
+    </header>
+
+    <div class="bd-example-snippet bd-code-snippet">
+      <nav>
+        <div class="nav nav-tabs mb-3 justify-content-center" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-request-tab" data-bs-toggle="tab" data-bs-target="#nav-requests" type="button" role="tab" aria-controls="nav-requests" aria-selected="true">Discover Recipes</button>
+          <button class="nav-link" id="nav-notifications-tab" data-bs-toggle="tab" data-bs-target="#nav-notification" type="button" role="tab" aria-controls="nav-notification" aria-selected="false">Add Recipe</button>
+          <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab" data-bs-target="#nav-history" type="button" role="tab" aria-controls="nav-history" aria-selected="false">Cook</button>
+        </div>
+      </nav>
+        <div id="">
+        
+    </div>
+        <!---FIRST TAB-->
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-requests" role="tabpanel" aria-labelledby="nav-request-tab">
+
+            <!-- Content for the "Discover Recipes" tab -->
+            <main class="container position-relative tab-content" id="nav-requests">
+              <div class="row p-5 " id="wrapper" style="max-height: 100vh; max-width: 100vw; background-color: #e1dccf;" >
+                <div>
+                  <h5 class="mb-5" style="color: #ff8b0f; font-size: 30px; text-align: center;">Craving for these dishes?</h5>
+                </div>
+                <a  class="col-3  " href="examplehero1.html" id="imaged">
+                   <img src="hero1.jpg" class="rounded rounded-5" style="width: 300px;" alt=""></a>
+                <a class="col-3"  href="examplehero2.html"> <img src="hero2.jpg" class="rounded rounded-5" style="width: 300px;" alt=""></a>
+                <a class="col-3"  href="examplehero1.html"> <img src="hero3.jpg" class="rounded rounded-5" style="width: 300px;" alt=""></a>
+                <a class="col-3 " href="examplehero1.html"> <img src="hero4.jpg" class="rounded rounded-5" style="width: 300px;" alt=""></a>
+             </div>
+              <!--- Search Bar-->
+              <br><br>
+                  <div class="container mt-3 row">
+                      <form class="d-flex" id="forms">
+                      <input step="height: 60%" class="form-control form-control-lg me-2 input-xl border border-2 border-warning" style="height: 60px;" id="searchInput" type="search" placeholder="Discover recipes" aria-label="Search" onkeyup="search()">
+                      <button class="btn btn-outline-warning btn-lg" type="submit" onclick="search()">Search</button>
+                      </form>
+                  </div>
+
+                  <!---List of items-->
+  <div class="container mt-4 my-container" >
+      <div class="row">
+      <div class="d">
+          <div class="card">
+          <div class=" card-header">
+              <h5 style="color: #ff8b0f; font-size: 30px;">Available Dishes</h5>
+          </div>
+          
+          <div class="card-body scrollable-container " style="max-height: 700px; overflow-y: scroll; background-color: #ffebd1;" id="dishes">
+              <ul id="popularList">
+              
+              <li class="list">
+                  <div class="container p-2" id="dish">
+                      <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                          <div class="col-2 me-2" style="color: #ff8b0f;">
+                              <a href="example.html"> <img src="karekare.png" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                          </div>
+                          <div class="col-9">
+                              <p class="h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#first" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('dish')">Kare-Kare</p>
+                              <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Kare Kare is a traditional Filipino stew complimented with a thick savory peanut sauce. The commonly used meats Kare Kare is a traditional Filipino stew complimented with a thick savory peanut sauce. The commonly used meatsKare Kare is a traditional Filipino stew complimented with a thick savory peanut sauce. The commonly used meats
+                          </div>
+                          <div class="collapse" id="first">
+                              <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                              <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                              There are two main procedures in this kare-kare recipe. <br> <br>
+                              First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                              The second procedure is the sauce preparation. <br> <br>
+                              Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                              The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                              The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </li>
+
+                  <li class="list">
+                    <div class="container p-2" id="dish">
+                        <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                            <div class="col-2 me-2" style="color: #ff8b0f;">
+                                <a href=""> <img src="adobo.png" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                            </div>
+                            <div class="col-9">
+                                <p class="h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#abobo" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('adobo')">Pork adobo</p>
+                                <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">This is a recipe post for Filipino Pork Adobo. It is a dish composed of pork slices cooked in soy sauce, vinegar, and garlic. There are version wherein onions are also added. Adobo is a popular dish in the Philippines. The word Adobo was derived from the Spanish word “adobar”. It means to marinate. This can be in the form of a liquid marinade or to rub using a combination of powdered ingredient.This version of Filipino Adobo version suggests marinating the pork in soy sauce and crushed garlic. By preference, vinegar can also be added as a marinade ingredient.
+                            </div>
+                            <div class="collapse" id="abobo">
+                                <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                There are two main procedures in this pork adobo recipe. <br> <br>
+                                First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                The second procedure is the sauce preparation. <br> <br>
+                                Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+
+                  
+  
+
+                      <li class="list">
+                          <div class="container p-2" id="dish">
+                              <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                                  <div class="col-2 me-2" style="color: #ff8b0f;">
+                                      <a href=""> <img src="filipino_pork_sinigang.jpg" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                                  </div>
+                                  <div class="col-9">
+                                      <p class="h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#sinigang" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('sinigang')">Sinigang</p>
+                                      <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Sinigang is a tamarind-based soup that is known for its sour and savory taste. You can make it with either fish, pork belly, spare ribs or corned beef. My favorite is with pork spare ribs, lots of veggies, and a bed of rice. The main ingredients include tamarind paste or powder, onions, tomatoes, green chili, and a variety of greens including string beans, okra, and bok choy. Some people add eggplant, daikon, or taro as well. There are many ways sinigang can be prepared because it is one of those dishes you can modify to make it a specialty of your own. I only know this because I’ve tried about nine versions from my aunties, which all tasted amazingly different.
+                                  </div>
+                                  <div class="collapse" id="sinigang">
+                                      <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                      <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                      There are two main procedures in this sinigang recipe. <br> <br>
+                                      First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                      The second procedure is the sauce preparation. <br> <br>
+                                      Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                      The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                      The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          </li>
+
+
+                          <li class="list">
+                              <div class="container p-2" id="dish">
+                                  <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                                      <div class="col-2 me-2" style="color: #ff8b0f;">
+                                          <a href=""> <img src="dinakdakan.jpg" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                                      </div>
+                                      <div class="col-9">
+                                          <p class="h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#dinakdakan" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('dinakdakan')">Dinakdakan</p>
+                                          <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Dinakdakan is an Ilocano delicacy made with grilled pork parts tossed in a calamansi dressing with onions and chili peppers. It's delicious enjoyed as an appetizer with your favorite drinks or as a main dish with steamed rice. Like the Kapampangan sisig, the meat is first simmered in aromatics until tender, charred over hot coals, and cut into bite-sized strips before tossing in tangy calamansi or vinegar dressing with minced ginger, red onions, and chili peppers.
+                                      </div>
+                                      <div class="collapse" id="dinakdakan">
+                                          <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                          <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                          There are two main procedures in this Dinakdakan recipe. <br> <br>
+                                          First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                          The second procedure is the sauce preparation. <br> <br>
+                                          Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                          The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                          The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              </li>
+                  
+                              <li class="list">
+                                  <div class="container p-2" id="dish">
+                                      <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                                          <div class="col-2 me-2" style="color: #ff8b0f;">
+                                              <a href=""> <img src="dinuguan.jpg" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                                          </div>
+                                          <div class="col-9">
+                                              <p class="h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#dinuguan" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('dinuguan')">Dinuguan</p>
+                                              <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Dinuguan is a Filipino savory stew usually of pork offal (typically lungs, kidneys, intestines, ears, heart and snout) and/or meat simmered in a rich, spicy dark gravy of pig blood, garlic, chili (most often siling haba), and vinegar.This dish is rather similar to European-style blood sausage, or British and Irish black pudding in a saucy stew form. It is perhaps closer in appearance and preparation to the Polish soup Czernina or an even more ancient Spartan dish known as melas zomos (black soup) whose primary ingredients were pork, vinegar and blood.
+                                          </div>
+                                          <div class="collapse" id="dinuguan">
+                                              <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                              <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                              There are two main procedures in this kare-kare recipe. <br> <br>
+                                              First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                              The second procedure is the sauce preparation. <br> <br>
+                                              Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                              The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                              The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  </li>
+
+                                  <li class="list">
+                                    <div class="container p-2" id="dish">
+                                        <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                                            <div class="col-2 me-2" style="color: #ff8b0f;">
+                                                <a href=""> <img src="chopsuey.jpg" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                                            </div>
+                                            <div class="col-9">
+                                                <p class="h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#chop" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('chop')">Chopsuey</p>
+                                                <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Chopseuy is an Ilocano delicacy made with grilled pork parts tossed in a calamansi dressing with onions and chili peppers. It's delicious enjoyed as an appetizer with your favorite drinks or as a main dish with steamed rice. Like the Kapampangan sisig, the meat is first simmered in aromatics until tender, charred over hot coals, and cut into bite-sized strips before tossing in tangy calamansi or vinegar dressing with minced ginger, red onions, and chili peppers.
+                                            </div>
+                                            <div class="collapse" id="chop">
+                                                <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                                <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                                There are two main procedures in this Dinakdakan recipe. <br> <br>
+                                                First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                                The second procedure is the sauce preparation. <br> <br>
+                                                Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                                The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                                The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </li>
+                        
+                                    <li class="list">
+                                        <div class="container p-2" id="dish">
+                                            <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                                                <div class="col-2 me-2" style="color: #ff8b0f;">
+                                                    <a href=""> <img src="pinapaitan.jpg" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                                                </div>
+                                                <div class="col-9">
+                                                    <p class=" d-block h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#pinapaitan" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('pinapaitan')">Pinapaitan</p>
+                                                    <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Pinapaitan is a Filipino savory stew usually of pork offal (typically lungs, kidneys, intestines, ears, heart and snout) and/or meat simmered in a rich, spicy dark gravy of pig blood, garlic, chili (most often siling haba), and vinegar.This dish is rather similar to European-style blood sausage, or British and Irish black pudding in a saucy stew form. It is perhaps closer in appearance and preparation to the Polish soup Czernina or an even more ancient Spartan dish known as melas zomos (black soup) whose primary ingredients were pork, vinegar and blood.
+                                                </div>
+                                                <div class="collapse" id="pinapaitan">
+                                                    <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                                    <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                                    There are two main procedures in this Pinapaitan recipe. <br> <br>
+                                                    First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                                    The second procedure is the sauce preparation. <br> <br>
+                                                    Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                                    The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                                    The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </li>
+
+                                        <li class="list">
+                                          <div class="container p-2" id="dish">
+                                              <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+                                                  <div class="col-2 me-2" style="color: #ff8b0f;">
+                                                      <a href="example.html"> <img src="pakbet.jpg" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+                                                  </div>
+                                                  <div class="col-9">
+                                                      <p class=" d-block h5 text-dark dish" id="dish" type="button" data-bs-toggle="collapse" data-bs-target="#pakbet" style="font-size: 28px; font-weight: 300px;" onclick="toggleCollapse('pakbet')">Pinakbet</p>
+                                                      <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">Pakbet is a Filipino savory stew usually of pork offal (typically lungs, kidneys, intestines, ears, heart and snout) and/or meat simmered in a rich, spicy dark gravy of pig blood, garlic, chili (most often siling haba), and vinegar.This dish is rather similar to European-style blood sausage, or British and Irish black pudding in a saucy stew form. It is perhaps closer in appearance and preparation to the Polish soup Czernina or an even more ancient Spartan dish known as melas zomos (black soup) whose primary ingredients were pork, vinegar and blood.
+                                                  </div>
+                                                  <div class="collapse" id="pakbet">
+                                                      <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+                                                      <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+                                                      There are two main procedures in this Pinapaitan recipe. <br> <br>
+                                                      First is the preparation of the meat components, which includes oxtail and trip. <br> <br>
+                                                      The second procedure is the sauce preparation. <br> <br>
+                                                      Prepare the oxtail and beef tripe by boiling it for around 20 minutes. This step, which I call the initial boil, helps gets rid of impurities. The water used to boil the meat needs to be discarded and replaced with a quart of fresh water. I then pressure cook it for 25 minutes and set it aside. <br> <br>
+                                                      The sauce is then prepared by sauteing onion and garlic in a large pot. Next is to pour the stock. This is the liquid used to pressure cook the meat. The peanut sauce won’t be complete without a peanut component. I used peanut butter for this recipe. Add annatto water afterwards. This ingredient provides color to the sauce. It is made by soaking annatto seeds with hot water and stirring until the reddish color is extracted from the seed. I also add a piece of Knorr beef cube to provide a solid beef flavor into the sauce. <br> <br>
+                                                      The next thing that I do is add the oxtail and beef tripe into the peanut sauce. We do not need to cook these long because these are already tender. The sauce can be thickened further by combining cornstarch with water and adding the mixture into the sauce. Add the vegetables, cook for 5 to 7 minutes, and you are done. <br>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          </li>
+                                  
+  
+              </ul>
+                  </div>
+              </div>
+              </div>
+              </main>
+          </div>
+<!----END FIRST------->
+
+<!----SECOND FEATURE STARTS HERE-->
+<div class="tab-pane fade" id="nav-notification" role="tabpanel" aria-labelledby="nav-notifications-tab">
+
+  <main class="container position-relative tab-content" id="nav-requests">
+                
+          
+
+    <div class="container mt-5" >
+        <div class="row">
+      <div class="">
+        <div class="card p-5" style=" background-color:#ffebd1;">
+          <div class="card-header">
+            <h5 style="color: #ff8b0f; font-size: 50px; font-weight: 300px;">Share you own recipe!</h5>
+          </div>
+      <form id="uploadForm">
+          <div class="my-3">
+            <label for="recipeName" class="form-label" style="font-size: 25px;" >Recipe Name</label>
+            <input class="form-control" type="text" id="recipeName" required>
+          </div>
+          <div class="my-3">
+            <label for="description" class="form-label" style="font-size: 25px;" >Description</label>
+            <textarea class="form-control" id="description" placeholder="This recipe is..." required></textarea>
+          </div>
+          <div class="my-3">
+            <label for="ingredients" class="form-label" style="font-size: 25px;" >Ingredients</label>
+            <textarea class="form-control" id="ingredients" placeholder="flou-1/2 cup, butter-1/2 cup," required></textarea>
+          </div>
+          <div class="my-3">
+            <label for="instructions" class="form-label" style="font-size: 25px;" >Procedure</label>
+            <textarea class="form-control" id="instructions" placeholder="Mix sugar and flour."></textarea>
+          </div>
+          <div class="my-3">
+            <label for="image" class="form-label" style="font-size: 25px;" >Image</label>
+            <input class="form-control" type="file" id="image" required>
+          </div>
+          <button type="submit" class="btn text-light btn-lg position-absolute bottom-0 end-0 me-5 mb-5" style="background-color: #ff8b0f;" onclick="updatePopularList">Upload Recipe</button>
+          <br><br>
+        </form>
+      </div>
+    </div>
+  </div>
+      </div>
+      </main>
+
+  
+</div>
+
+<!----SECOND FEATURE ENDS HERE-->
+
+
+
+<!----THIRD FEATURE STARTS HERE-->
+<div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-history-tab">
+  <main class="container position-relative tab-content" id="nav-requests">
+           
+    <div class="card border border-3 border-warning mt-5">
+
+        <div class="row">
+            <h1 class=" ms-5 mt-3 mb-4" style="font-size: 32px; color: #ff8b0f;">Dessert</h1>
+        
+        <ul >
+            <div  >
+            <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+                <a href=""><img class="rounded rounded-5" src="halo-halo.jpg" style="height: 200px;" alt=""></a>
+                <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Halo-halo</h1>
+            </li>
+            <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+                <a href=""><img class="rounded rounded-5" src="leche-flan.jpg" style="height: 200px;" alt=""></a>
+                <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Leche Flan</h1>
+            </li>
+            <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+                <a href=""><img class="rounded rounded-5" src="Minatamis na Saging (Plantain Bananas in Caramel Syrup) - Pinoy Recipes.jpg" style="height: 200px;" alt=""></a>
+                <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Saging con Yelo</h1>
+            </li>
+            <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+                <a href=""><img class="rounded rounded-5" src="Buko-Pandan-Salad.jpg" style="height: 200px;" alt=""></a>
+                <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Buko Pandan</h1>
+        </div>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <h1 class=" ms-5 mt-3 mb-4" style="font-size: 32px; color: #ff8b0f;">Marienda</h1>
+    
+    <ul >
+        <div  >
+        <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+            <a href=""><img class="rounded rounded-5" src="Banana Cue (Filipino Fried Caramelized Bananas).jpg" style="height: 200px; width: 200px;" alt=""></a>
+            <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Banana Cue</h1>
+        </li>
+        <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+            <a href=""><img class="rounded rounded-5" src="Kwek-kwek.jpg" style="height: 200px; width: 200px; " alt=""></a>
+            <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Kwek- kwek</h1>
+        </li>
+        <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+            <a href=""><img class="rounded rounded-5" src="bbq.jpg" style="height: 200px; width: 200px;" alt=""></a>
+            <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Pork Barbecue</h1>
+        </li>
+        <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+            <a href=""><img class="rounded rounded-5" src="lumpia.png" style="height: 200px; width: 200px;" alt=""></a>
+            <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Lumpiang shaanghai</h1>
+    </div>
+    </ul>
+</div>
+<br>
+<br>
+<div class="row">
+    <h1 class=" ms-5 mt-3 mb-4" style="font-size: 32px; color: #ff8b0f;">Main Dish</h1>
+
+<ul >
+    <div  >
+    <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+        <a href=""><img class="rounded rounded-5" src="karekare.png" style="height: 200px; width: 200px;" alt=""></a>
+        <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Kare-kare</h1>
+    </li>
+    <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+        <a href=""><img class="rounded rounded-5" src="chicken-adobo_.jpg" style="height: 200px; width: 200px; " alt=""></a>
+        <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Chicken Adobo</h1>
+    </li>
+    <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+        <a href=""><img class="rounded rounded-5" src="filipino_pork_sinigang.jpg" style="height: 200px; width: 200px;" alt=""></a>
+        <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Sinigang</h1>
+    </li>
+    <li class="mx-5 rounded rounded-5" style="display: inline-block;">
+        <a href="example.html"><img class="rounded rounded-5" src="pakbet.jpg" style="height: 200px; width: 200px;" alt=""></a>
+        <h1 class="text-center mt-3" style="font-size: 25px; font-weight: 200px;">Pakbet</h1>
+</div>
+</ul>
+</div>
+
+    </div>
+    </main>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!----THIRD FEATURE ENDS HERE-->
+
+
+
+<!--footer start-->
+<hr style="size: 2px;">
+<section id="contact" style=" margin-top: 10; margin-bottom: 3%;" class="background-color-dark">
+    <div class="container py-10">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5  ">
+        <div class="col mb-3">
+          <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Logo" width="120" height="120" class="d-inline-block">
+      <span style="font-size: 30px; color: #FFCA2C; font-weight: 900;">dishCovery</span>
+          </a>
+        </div>
+    
+        <div class="col mb-3">
+    
+        </div>
+    
+        <div class="col mb-1">
+          <h5 style="font-size: 30px; text-shadow: 4px 1px  #FFCA2C;">Navigations</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary fa-arrow-right"> Home </a></li>
+            <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary fa-arrow-right"> Feature</a></li>
+            <li class="nav-item mb-2"><a href="#contact" class="nav-link p-0 text-body-secondary fa-arrow-right"> Contact</span></a></li>
+           
+          </ul>
+        </div>
+    
+        <div class="col mb-1">
+          <h5 style="font-size: 30px; text-shadow: 4px 1px  #FFCA2C;">Contact Us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary  fa-arrow-right" > Urdaneta City, Pangasinan</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary fa-arrow-right"> 09917371829</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary fa-arrow-right"> bagcal@gmail.com</a></li>
+           
+           
+          </ul>
+        </div>
+    
+        <div class="col mb-1">
+          <h5 style="font-size: 30px;text-shadow: 4px 1px  #FFCA2C;">Follow Us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary fab fa-facebook" > Facebook</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary fab fa-github" > GitHub</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary fab fa-instagram"> Instagram</a></li>
+           
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </section>
+  <hr>
+  <footer class=" row background-color-dark">
+    <p style="color: #fff; text-align: center;"> <center>&copy; 2023 dishCovery. All rights reserved. </center></p>
+  </footer>
+    <!--footer end-->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="dashboard.js"></script>
+
+
+    
+    <script>
+      function toggleCollapse(id) {
+        const collapseElement = document.getElementById(id);
+        const dishElement = document.getElementById('dish' + id.slice(-1));
+        const descElement = document.getElementById('desc' + id.slice(-1));
+    
+        const allCollapses = document.querySelectorAll('.collapse');
+        const allDishElements = document.querySelectorAll('.dish');
+        const allDescElements = document.querySelectorAll('.text-dark');
+    
+        for (let i = 0; i < allCollapses.length; i++) {
+          if (allCollapses[i] === collapseElement) {
+            allCollapses[i].classList.toggle('show');
+          } else {
+            allCollapses[i].classList.remove('show');
+          }
+        }
+    
+        for (let i = 0; i < allDishElements.length; i++) {
+          if (allDishElements[i] === dishElement) {
+            allDishElements[i].classList.add('active');
+          } else {
+            allDishElements[i].classList.remove('active');
+          }
+        }
+    
+        for (let i = 0; i < allDescElements.length; i++) {
+          if (allDescElements[i] === descElement) {
+            allDescElements[i].classList.add('active');
+          } else {
+            allDescElements[i].classList.remove('active');
+          }
+        }
+      }
+      
+    </script>
+    
+
+    <script>
+        const form = document.getElementById("forms");
+       form.addEventListener("submit", function(event) {
+         event.preventDefault();
+         searchPosts();
+       });
+ 
+ const searchInput = document.getElementById('searchInput');
+ searchInput.addEventListener("input", function() {
+   searchPosts();
+ });
+ 
+ function search() {
+   var input = document.getElementById('searchInput');
+   var filter = input.value.toUpperCase();
+   var dishes = document.getElementById('dishes');
+   var recipes = dishes.getElementsByClassName('list');
+ 
+   for (var i = 0; i < recipes.length; i++) {
+     var name = recipes[i].querySelector('.dish').textContent.toUpperCase();
+     var description = recipes[i].querySelector('#desc').textContent.toUpperCase();
+ 
+     if (name.indexOf(filter) > -1 || description.indexOf(filter) > -1) {
+       recipes[i].style.display = '';
+     } else {
+       recipes[i].style.display = 'none';
+     }
+   }
+ }
+ 
+ 
+ 
+ //upload-----------------------------------
+ 
+     // Store the uploaded recipes
+    
+     var recipes = [];
+ 
+   // Function to handle recipe upload
+   function uploadRecipe(event) {
+     event.preventDefault();
+ 
+     // Get the form inputs
+     var recipeName = document.getElementById('recipeName').value;
+     var description = document.getElementById('description').value;
+     var ingredients = document.getElementById('ingredients').value;
+     var instructions = document.getElementById('instructions').value;
+     var imageInput = document.getElementById('image');
+     var image = imageInput.files[0];
+ 
+     // Create a FileReader object to read the file content
+     var reader = new FileReader();
+ 
+     // Callback function executed when the file content is read
+     reader.onload = function(event) {
+       // Create an object URL for the uploaded image
+       var imageUrl = event.target.result;
+ 
+       // Add the uploaded recipe to the recipes array
+       recipes.push({ recipeName, description, ingredients, instructions, imageUrl });
+ 
+       // Call the function to update the popular list
+       updatePopularList();
+ 
+       // Reset the form inputs
+       document.getElementById('recipeName').value = '';
+       document.getElementById('description').value = '';
+       document.getElementById('ingredients').value = '';
+       document.getElementById('instructions').value = '';
+       document.getElementById('image').value = '';
+     };
+ 
+     // Read the file content as a Data URL
+     reader.readAsDataURL(image);
+   }
+ 
+   // Function to update the popular list with uploaded recipes
+   function updatePopularList() {
+  
+    
+ 
+     // Loop through the recipes array and create list items for each recipe
+     for (var i = 0; i < recipes.length; i++) {
+       var recipe = recipes[i];
+ 
+       // Create the HTML for the recipe item
+       var listItem = document.createElement('li');
+       listItem.classList.add('list');
+ 
+       var itemContent = `
+       <div class="container p-2" id="dish">
+      <div class="row border border-2 border-warning rounded rounded-2 py-2 justify-content-center ">
+          <div class="col-2 me-2" style="color: #ff8b0f;">
+              <a href=""> <img src="${recipe.imageUrl}" alt="" class=" img-fluid rounded-circle" style="width: 200px;"> </a>
+          </div>
+          <div class="col-9">
+              <p class="h5 text-dark dish" id="${recipe.recipeName}" type="button" data-bs-toggle="collapse" data-bs-target="#sample" style="font-size: 28px; font-weight: 300px;">${recipe.recipeName}</p>
+              <p class=" text-dark" id="desc" style="font-size: 15px; color: black;">${recipe.instructions}
+          </div>
+          <div class="collapse" id="sample">
+              <div class="card card-body pb-3 mb-0 small lh-sm border-bottom mt-2"> 
+              <span style="font-size: 15px; color: #ffb22c; font-weight: 500;">Procedure</span>
+              ${recipe.instructions}
+              </div>
+          </div>
+      </div>
+  </div>
+       `;
+ 
+       listItem.innerHTML = itemContent;
+ 
+       popularList.prepend(listItem);
+       alert("Recipe has been uploaded!")
+     }
+   }
+ 
+   // Attach the event listener to the upload form
+   document.getElementById('uploadForm').addEventListener('submit', uploadRecipe);
+   </script>
+</body>
+</html>

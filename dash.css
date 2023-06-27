@@ -1,0 +1,41 @@
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: black;
+}
+
+#wrapper{
+
+}
+#imaged{
+
+}
+#content{
+    background: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: .6s;
+}
+#content:hover{
+opacity: 1;
+}
+#content a{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+#content > *{
+    transform: translateY(25px);
+    transition: transform 0.6s;
+}
+#content:hover{
+    transform: translateY(0px);
+}
+.container{
+    border: none !important;
+}

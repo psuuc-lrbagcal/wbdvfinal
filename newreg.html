@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center">Registration Form</h3>
+          </div>
+          <div class="card-body">
+            <form id="registrationForm" action="dashboard.html" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter a password" required>
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="agree">
+                <label class="form-check-label" for="agree">I agree to the terms and conditions</label>
+              </div>
+              <input class="btn btn-lg btn-warning btn-block" id="login" type="submit" value="Register" id="" onclick="auth()">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  
+ <script>
+function auth() {
+  // Get the entered username and password
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirm-password').value;
+  var termsCheckbox = document.getElementById('agree');
+
+  // Check if the terms and conditions checkbox is checked
+  if (!termsCheckbox.checked) {
+    alert('Please agree to the terms and conditions');
+    return;
+  }
+
+  // Check if the entered password matches the confirmed password
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  // Check if the entered email and password are correct
+  if (email === 'jcreyes@gmail.com' && password === confirmPassword) {
+    alert('Sign up successful!');
+    window.location.assign('dashboard.html');
+    // You can redirect the user to another page or perform any other action here
+  } else {
+    alert('Details do not match');
+    // You can clear the input fields or show an error message here
+    return;
+  }
+}
+</script>
+
+
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+.navbar {
+    background-color: #FFCA2C;
+  }
+  
+  .navbar-brand {
+    color: #FFF;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+  
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  /* Hero section */
+  .hero {
+    background-image: url(bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 0 15%;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFCA2C;
+    margin-bottom: 2rem;
+    text-shadow: 3px 3px 0 #fff;
+  }
+  
+  .hero p {
+    font-size: 1.8rem;
+    color: #FFF;
+  }
+  
+  .hero .btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+  }
+  
+  /* Features section */
+  
+  #feature{
+  margin-top: 5%;
+  }
+  .nav-item{
+  font-size: 1.5vw;}
+  .container .col{
+  padding-left:30px;
+  padding-right:30px;
+  }
+  .navbar-nav li {
+  padding-left:6px;
+  padding-right:30px;
+  }
+  
+  span{
+  font-size: 3vw;
+  font-weight: bolder;
+  color: #FFCA2C;
+  }
+  svg {
+  color: #FFCA2C;
+  background-color: white;
+  
+  
+  }
+  
+  div .feature{
+  background-color: #fff;
+  border-radius: 20px;
+  border: solid #FFCA2C 2px;
+  padding: 20px;
+  
+  }
+  div .feature1{
+  background-color: #fff;
+  border-radius: 20px;
+  border: solid #FFCA2C 2px;
+  padding: 20px;
+  }
+  div .feature2{
+  background-color: #fff;
+  border-radius: 20px;
+  border: solid #FFCA2C 2px;
+  padding: 20px;
+  }
+  
+  .footerr {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footerr p {
+    margin: 0;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footerr {
+      font-size: 14px;
+    }
+  }
+  
+  

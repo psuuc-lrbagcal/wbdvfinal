@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+  <title>Forgot Password</title>
+  <style>
+    .form-control-custom {
+      border-radius: 10px;
+      border-color: #ff9800;
+      width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-3">
+    <h1>Forgot Password</h1>
+    <form>
+      <div class="mb-3">
+        <p>Please enter the email address you'd like your password reset information sent to</p>
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control form-control-custom" id="email" placeholder="Enter your email" >
+        
+        <label for="email" class="form-label">New Password</label>
+        <input type="password" class="form-control form-control-custom" id="newPassword" placeholder="Enter your new password" >
+      </div>
+      <input class="btn btn-warning "  type="submit" value="Reset" id="" onclick="auth()">
+    </form>
+  </div>
+  <script>
+    // JavaScript code for forgot password functionality
+    document.addEventListener("DOMContentLoaded", function() {
+    function auth(event){
+      event.preventDefault();
+
+      // Get the entered email and new password
+      var email = document.getElementById('email').value;
+      var newPassword = document.getElementById('newPassword').value;
+
+      // Check if the entered email is jcreyes@gmail.com
+      if (email === 'jcreyes@gmail.com' ){
+        alert('Password reset information has been sent to your email address.');
+        console.log('Redirecting to index.html');
+window.location.href = "login.html";
+
+        window.location.href = "login.html";
+
+        
+        // You can perform any action here, such as sending an email or redirecting to another page
+      } else {
+        alert('Invalid email address. Please try again.');
+        // You can clear the input fields or show an error message here
+      }
+    }
+    // Get the sign-up form element
+    const signupForm = document.querySelector("form");
+  
+    // Attach the signup function to the form's submit event
+    signupForm.addEventListener("submit", auth);
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
